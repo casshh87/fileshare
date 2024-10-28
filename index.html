@@ -15,11 +15,13 @@
     
     <div class="upload-section">
         <h2>Upload an Image</h2>
-        <form name="file" action="upload.php" method="POST" id="uploadForm">
-            <input type="file" id="fileInput" name="file" accept="image/*">
+        <form method="POST" action="upload.php"  id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*">
+            <input type="text" name="comment" placeholder="Ваш комментарий">
             <br><br>
             <button type="submit">Upload</button>
         </form>
+        
     </div>
 
     <!-- Display uploaded image -->
@@ -27,8 +29,6 @@
         <img id="Image" src="styles/image.jpg" alt="Image">
     </div>
 </div>
-
-
 
 </body>
 </html>
