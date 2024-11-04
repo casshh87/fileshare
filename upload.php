@@ -52,7 +52,7 @@ class File
 }
 
 
-$DB = new DB('sqlite:C:/Users/user/project/db.db');
+$DB = new DB('sqlite:' . __DIR__ . '/db.db');
 
 $conn = $DB->Conn();
 
