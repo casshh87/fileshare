@@ -1,0 +1,36 @@
+﻿services:
+  php:
+    build:
+      context: .  
+    container_name: php-container
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    command: php -S 0.0.0.0:4000
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    tty: true
+
+  db:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: database
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+

@@ -14,7 +14,6 @@ $comment = $_POST['comment'];
 
 class File
 {
-
     private $db;
 
     // Конструктор принимает объект подключения
@@ -22,7 +21,6 @@ class File
     {
         $this->db = $dbConnection;
     }
-
 
     // Метод для добавления файла в таблицу
     public function addFile($name, $size, $path, $type, $date, $comment)
@@ -52,7 +50,7 @@ class File
 }
 
 
-$DB = new DB('sqlite:' . __DIR__ . '/db.db');
+$DB = new DB("pgsql:host=localhost, dbname=database, user=root, password=root");
 
 $conn = $DB->Conn();
 
