@@ -2,7 +2,6 @@
 class DB
 {
     private $db;
-
     // Конструктор принимает строку DSN, имя пользователя и пароль
     function __construct($dsn, $username, $password)
     {
@@ -15,8 +14,6 @@ class DB
             echo "Ошибка подключения к базе данных: " . $e->getMessage();
         }
     }
-
-
     public function Conn()
     {
         return $this->db;
