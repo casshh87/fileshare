@@ -28,7 +28,7 @@ class File
 
         $stmt->bindparam(':name', $name);
         $stmt->bindparam(':size', $size);
-        $stmt->bindparam(':path', $path);  // Здесь мы будем использовать $targetPath
+        $stmt->bindparam(':path', $path); 
         $stmt->bindparam(':type', $type);
         $stmt->bindparam(':date', $date);
         $stmt->bindparam(':comment', $comment);
