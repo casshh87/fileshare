@@ -32,10 +32,10 @@ class File
         $stmt->bindparam(':type', $type);
         $stmt->bindparam(':date', $date);
         $stmt->bindparam(':comment', $comment);
-
         $stmt->execute();
-
         move_uploaded_file($_FILES['file']['tmp_name'], $path);
+        header('Location: file_list.php');
+        exit;
     }
 }
 
