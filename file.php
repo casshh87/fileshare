@@ -43,7 +43,7 @@ $fileExtension = strtolower(pathinfo($file['path'], PATHINFO_EXTENSION));
 if (in_array($fileExtension, $imageTypes)) {
     // Если файл - изображение, отображаем его
     echo "<p><strong>Изображение:</strong></p>";
-    echo "<img src='" . htmlspecialchars($filePath) . "' alt='Изображение' style='max-width: 100%; height: auto;'>";
+    echo "<img src='" . htmlspecialchars($filePath) . "' alt='Изображение' style='width: 150px; height: 150px; object-fit: cover;'>";
 } else {
     // Если файл не является изображением
     echo "<p>Этот файл не поддерживает отображение как изображение.</p>";
